@@ -4,17 +4,23 @@ A **clean, modern, and production-ready** URL shortener built with **Python** an
 
 ---
 ## 📖 Table of Contents
+0. [🖼️ Preview](#-preview)  
 1. [✨ Features](#-features)  
 2. [🚀 Quick Start](#-quick-start)  
 3. [🖥️ Web Interface](#️-web-interface)  
 4. [🧩 Tech Stack](#-tech-stack)  
-5. [🔗 API Endpoints](#-api-endpoints)  
-6. [⚙️ Example Usage](#️-example-usage)  
+5. [⚙️ Example Usage](#️-example-usage)
+6. [🔗 API Endpoints](#-api-endpoints)    
 7. [🧱 Configuration](#-configuration)  
 8. [🧪 Testing](#-testing)  
 9. [⚡ How It Works](#-how-it-works)  
-10. [🧠 Performance Highlights](#-performance-highlights)
-11. [👩‍💻 Author](#-author)
+10. [🧠 Performance Features](#-performance-features)
+11. [👩 Author](#-author)
+
+---
+
+## 🖼️ Preview
+![App Screenshot](docs/Assets/demo-input.png)
 
 ---
 
@@ -94,7 +100,7 @@ Once running, visit these URLs for interactive API documentation:
 - **Swagger UI**: http://localhost:8000/docs
 - **ReDoc**: http://localhost:8000/redoc
 
-## API Usage Examples
+## 🔗 API Endpoints
 
 ### Shorten a URL
 
@@ -200,7 +206,7 @@ pytest tests/test_api.py
 - **Rate Limiting**: Per-IP rate limiting with token bucket algorithm
 - **Connection Pooling**: Efficient database connection management
 
-## 👩‍💻 Author
+## 👩 Author
 
 **Neha Kotwal** 
 
