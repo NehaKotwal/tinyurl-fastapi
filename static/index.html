@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔗 URL Shortener</h1>
+            <p class="subtitle">Create short, shareable links in seconds</p>
+        </header>
+
+        <main>
+            <!-- URL Shortening Form -->
+            <section class="card">
+                <h2>Shorten a URL</h2>
+                <form id="shortenForm">
+                    <div class="form-group">
+                        <label for="originalUrl">Long URL *</label>
+                        <input
+                            type="url"
+                            id="originalUrl"
+                            name="originalUrl"
+                            placeholder="https://www.example.com/very/long/url"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customAlias">Custom Alias (optional)</label>
+                        <input
+                            type="text"
+                            id="customAlias"
+                            name="customAlias"
+                            placeholder="my-custom-link"
+                            pattern="[a-zA-Z0-9_-]{4,20}"
+                            title="4-20 characters: letters, numbers, hyphens, underscores"
+                        >
+                        <small>4-20 characters (letters, numbers, -, _)</small>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Shorten URL</button>
+                </form>
+
+                <!-- Result Display -->
+                <div id="resultSection" class="result-section hidden">
+                    <div class="result-card">
+                        <h3>✓ URL Shortened Successfully!</h3>
+                        <div class="short-url-display">
+                            <input type="text" id="shortUrlInput" readonly>
+                            <button id="copyBtn" class="btn-secondary">Copy</button>
+                        </div>
+                        <div class="result-details">
+                            <p><strong>Original URL:</strong> <span id="originalUrlDisplay"></span></p>
+                            <p><strong>Short Code:</strong> <span id="shortCodeDisplay"></span></p>
+                            <p><strong>Created:</strong> <span id="createdAtDisplay"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error Display -->
+                <div id="errorSection" class="error-section hidden">
+                    <p id="errorMessage"></p>
+                </div>
+            </section>
+
+            <!-- URL List -->
+            <section class="card">
+                <div class="section-header">
+                    <h2>Your Shortened URLs</h2>
+                    <button id="refreshBtn" class="btn-secondary btn-small">Refresh</button>
+                </div>
+
+                <div id="urlListSection">
+                    <p class="loading">Loading URLs...</p>
+                </div>
+
+                <div id="urlList" class="url-list hidden"></div>
+
+                <div id="emptyState" class="empty-state hidden">
+                    <p>No URLs shortened yet. Create your first one above!</p>
+                </div>
+            </section>
+
+            <!-- Statistics Modal -->
+            <div id="statsModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>URL Statistics</h3>
+                        <button id="closeModal" class="close-btn">&times;</button>
+                    </div>
+                    <div class="modal-body" id="statsContent">
+                        <!-- Stats will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with FastAPI | <a href="/docs" target="_blank">API Documentation</a></p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
